@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | ENGGITEA</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="main-header">
+
+        <a href="index.html" class="logo">
+            ENGGITEA
+        </a>
+
+        <nav class="main-nav">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="search.html">
+                Search
+            </a>
+
+            <a href="upload.html">
+                Upload
+            </a>
+
+            <a href="my-resources.html">
+                My Resources
+            </a>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <a href="profile.html" class="profile-link active-nav">
+                Profile
+            </a>
+
+            <button
+                type="button"
+                class="logout-btn"
+                id="logoutBtn"
+            >
+                Logout
+            </button>
+
+        </div>
+
+        <button
+            class="menu-btn"
+            type="button"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- MOBILE MENU -->
+
+    <div class="mobile-menu">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="search.html">
+            Search
+        </a>
+
+        <a href="upload.html">
+            Upload
+        </a>
+
+        <a href="my-resources.html">
+            My Resources
+        </a>
+
+        <div class="mobile-menu-actions">
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <button
+                type="button"
+                id="mobileLogoutBtn"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROFILE PAGE -->
+
+    <main class="profile-page">
+
+        <section class="profile-header">
+
+            <div class="profile-avatar" id="profileAvatar">
+                U
+            </div>
+
+            <div>
+
+                <p>
+                    MY ACCOUNT
+                </p>
+
+                <h1 id="profileName">
+                    User
+                </h1>
+
+                <span id="profileEmail">
+                    user@example.com
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Profile Information -->
+
+        <section class="profile-section">
+
+            <div class="profile-section-heading">
+
+                <div>
+
+                    <p>
+                        ACCOUNT INFORMATION
+                    </p>
+
+                    <h2>
+                        Profile Details
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-details-card">
+
+                <div class="profile-detail-item">
+
+                    <span>
+                        Full Name
+                    </span>
+
+                    <strong id="detailName">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-detail-item">
+
+                    <span>
+                        Email Address
+                    </span>
+
+                    <strong id="detailEmail">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-detail-item">
+
+                    <span>
+                        Account Role
+                    </span>
+
+                    <strong id="detailRole">
+                        Student
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Quick Links -->
+
+        <section class="profile-section">
+
+            <div class="profile-section-heading">
+
+                <div>
+
+                    <p>
+                        QUICK LINKS
+                    </p>
+
+                    <h2>
+                        Manage Your Learning
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-links-grid">
+
+                <a
+                    href="my-resources.html"
+                    class="profile-link-card"
+                >
+
+                    <div class="quick-icon">
+                        ▤
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            My Resources
+                        </h3>
+
+                        <p>
+                            View resources you uploaded.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="upload.html"
+                    class="profile-link-card"
+                >
+
+                    <div class="quick-icon">
+                        +
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Upload Resource
+                        </h3>
+
+                        <p>
+                            Share useful study materials.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="search.html"
+                    class="profile-link-card"
+                >
+
+                    <div class="quick-icon">
+                        ⌕
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Search Resources
+                        </h3>
+
+                        <p>
+                            Find learning materials.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Logout -->
+
+        <section class="profile-logout-section">
+
+            <button
+                type="button"
+                class="secondary-btn"
+                id="profileLogoutBtn"
+            >
+                Logout from ENGGITEA
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="main-footer">
+
+        <div class="footer-logo">
+            ENGGITEA
+        </div>
+
+        <p>
+            Engineering Mathematics Resource Hub
+        </p>
+
+        <span>
+            © 2026 ENGGITEA. All rights reserved.
+        </span>
+
+    </footer>
+
+
+    <!-- SCRIPTS -->
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+
+    <script>
+
+        /* Mobile menu */
+
+        const menuButton =
+            document.querySelector(".menu-btn");
+
+        const mobileMenu =
+            document.querySelector(".mobile-menu");
+
+        if (menuButton && mobileMenu) {
+
+            menuButton.addEventListener("click", () => {
+
+                mobileMenu.classList.toggle("show");
+
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>

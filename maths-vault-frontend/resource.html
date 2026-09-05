@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resource | ENGGITEA</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="main-header">
+
+        <a href="index.html" class="logo">
+            ENGGITEA
+        </a>
+
+        <nav class="main-nav">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="search.html">
+                Search
+            </a>
+
+            <a href="upload.html">
+                Upload
+            </a>
+
+            <a href="my-resources.html">
+                My Resources
+            </a>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <a href="profile.html" class="profile-link">
+                Profile
+            </a>
+
+            <button
+                type="button"
+                class="logout-btn"
+                id="logoutBtn"
+            >
+                Logout
+            </button>
+
+        </div>
+
+        <button
+            class="menu-btn"
+            type="button"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- MOBILE MENU -->
+
+    <div class="mobile-menu">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="search.html">
+            Search
+        </a>
+
+        <a href="upload.html">
+            Upload
+        </a>
+
+        <a href="my-resources.html">
+            My Resources
+        </a>
+
+        <div class="mobile-menu-actions">
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <button
+                type="button"
+                id="mobileLogoutBtn"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESOURCE PAGE -->
+
+    <main class="resource-page">
+
+        <div class="breadcrumb">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <span>›</span>
+
+            <a href="search.html">
+                Resources
+            </a>
+
+            <span>›</span>
+
+            <span>
+                Details
+            </span>
+
+        </div>
+
+
+        <!-- Loading -->
+
+        <div
+            class="resource-detail-loading"
+            id="resourceDetailLoading"
+        >
+            Loading resource...
+        </div>
+
+
+        <!-- Error -->
+
+        <div
+            class="resource-detail-error"
+            id="resourceDetailError"
+            hidden
+        >
+
+            <div class="empty-icon">
+                !
+            </div>
+
+            <h2>
+                Resource not found
+            </h2>
+
+            <p>
+                We couldn't load this resource.
+            </p>
+
+            <a
+                href="search.html"
+                class="secondary-btn"
+            >
+                ← Back to Resources
+            </a>
+
+        </div>
+
+
+        <!-- Resource Details -->
+
+        <section
+            class="resource-detail-card"
+            id="resourceDetailCard"
+            hidden
+        >
+
+            <div class="resource-detail-top">
+
+                <span
+                    class="resource-type"
+                    id="resourceType"
+                >
+                    VIDEO
+                </span>
+
+                <span
+                    class="resource-semester"
+                    id="resourceSemester"
+                >
+                    Semester 1
+                </span>
+
+            </div>
+
+
+            <div
+                class="resource-detail-icon"
+                id="resourceIcon"
+            >
+                ▶
+            </div>
+
+
+            <h1 id="resourceTitle">
+                Resource Title
+            </h1>
+
+
+            <p
+                class="resource-detail-description"
+                id="resourceDescription"
+            >
+                Resource description will appear here.
+            </p>
+
+
+            <!-- Resource Information -->
+
+            <div class="resource-info-grid">
+
+                <div class="resource-info-item">
+
+                    <span>
+                        Subject
+                    </span>
+
+                    <strong id="resourceSubject">
+                        Engineering Mathematics
+                    </strong>
+
+                </div>
+
+
+                <div class="resource-info-item">
+
+                    <span>
+                        Unit
+                    </span>
+
+                    <strong id="resourceUnit">
+                        Unit 01
+                    </strong>
+
+                </div>
+
+
+                <div class="resource-info-item">
+
+                    <span>
+                        Uploaded By
+                    </span>
+
+                    <strong id="resourceUploader">
+                        Student
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Resource Action -->
+
+            <div class="resource-action">
+
+                <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="primary-btn"
+                    id="resourceOpenBtn"
+                >
+                    Open Resource
+                    <span>→</span>
+                </a>
+
+            </div>
+
+
+            <!-- Uploaded Date -->
+
+            <div class="resource-detail-footer">
+
+                <span id="resourceDate">
+                    Uploaded recently
+                </span>
+
+                <a href="search.html">
+                    ← Back to Resources
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="main-footer">
+
+        <div class="footer-logo">
+            ENGGITEA
+        </div>
+
+        <p>
+            Engineering Mathematics Resource Hub
+        </p>
+
+        <span>
+            © 2026 ENGGITEA. All rights reserved.
+        </span>
+
+    </footer>
+
+    <!-- SCRIPTS -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/resources.js"></script>
+
+    <!-- MOBILE MENU -->
+
+    <script>
+
+        const menuButton =
+            document.querySelector(".menu-btn");
+
+        const mobileMenu =
+            document.querySelector(".mobile-menu");
+
+        if (menuButton && mobileMenu) {
+
+            menuButton.addEventListener("click", () => {
+
+                mobileMenu.classList.toggle("show");
+
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>

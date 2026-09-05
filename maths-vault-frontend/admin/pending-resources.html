@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pending Resources | ENGGITEA</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header">
+
+        <a href="../index.html" class="logo">
+            ENGGITEA
+        </a>
+
+        <nav class="main-nav">
+
+            <a href="admin-dashboard.html">
+                Dashboard
+            </a>
+
+            <a
+                href="pending-resources.html"
+                class="active-nav">
+                Pending Resources
+            </a>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <a
+                href="../profile.html"
+                class="profile-link">
+                Profile
+            </a>
+
+            <button
+                type="button"
+                class="logout-btn"
+                id="logoutBtn">
+                Logout
+            </button>
+
+        </div>
+
+        <button
+            class="menu-btn"
+            aria-label="Open menu"
+            type="button">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu">
+
+        <a href="admin-dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="pending-resources.html">
+            Pending Resources
+        </a>
+
+        <div class="mobile-menu-actions">
+
+            <a href="../profile.html">
+                Profile
+            </a>
+
+            <button
+                type="button"
+                id="mobileLogoutBtn">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN -->
+    <main class="admin-page">
+
+        <!-- PAGE HEADER -->
+        <section class="admin-page-heading">
+
+            <div>
+
+                <p class="dashboard-label">
+                    RESOURCE REVIEW
+                </p>
+
+                <h1>
+                    Pending Resources
+                </h1>
+
+                <p>
+                    Review resources submitted by students
+                    before making them available.
+                </p>
+
+            </div>
+
+            <a
+                href="admin-dashboard.html"
+                class="secondary-btn">
+
+                ← Dashboard
+
+            </a>
+
+        </section>
+
+
+        <!-- MESSAGE -->
+        <div
+            id="adminResourceMessage"
+            class="form-message">
+        </div>
+
+
+        <!-- LOADING -->
+        <section
+            id="pendingLoading"
+            class="resource-loading">
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                Loading pending resources...
+            </p>
+
+        </section>
+
+
+        <!-- ERROR -->
+        <section
+            id="pendingError"
+            class="resource-error"
+            hidden>
+
+            <div class="empty-icon">
+                !
+            </div>
+
+            <h3>
+                Unable to load resources
+            </h3>
+
+            <p>
+                Something went wrong while loading
+                pending resources.
+            </p>
+
+            <button
+                type="button"
+                id="retryPendingBtn"
+                class="secondary-btn">
+
+                Try Again
+
+            </button>
+
+        </section>
+
+
+        <!-- EMPTY -->
+        <section
+            id="pendingEmpty"
+            class="resource-empty"
+            hidden>
+
+            <div class="empty-icon">
+                ✓
+            </div>
+
+            <h3>
+                No pending resources
+            </h3>
+
+            <p>
+                There are no resources waiting for review.
+            </p>
+
+        </section>
+
+
+        <!-- PENDING RESOURCES -->
+        <section
+            id="pendingSection"
+            class="pending-resources-section"
+            hidden>
+
+            <div class="admin-section-heading">
+
+                <div>
+
+                    <p>
+                        NEEDS REVIEW
+                    </p>
+
+                    <h2>
+                        Submitted Resources
+                    </h2>
+
+                </div>
+
+                <span id="pendingResultsCount">
+                    0 resources
+                </span>
+
+            </div>
+
+
+            <div
+                id="pendingResourcesContainer"
+                class="pending-resources-list">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+
+        <div class="footer-logo">
+            ENGGITEA
+        </div>
+
+        <p>
+            Engineering Mathematics Resource Hub
+        </p>
+
+        <span>
+            © 2026 ENGGITEA. All rights reserved.
+        </span>
+
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/admin.js"></script>
+
+
+    <!-- MOBILE MENU -->
+    <script>
+
+        const menuButton =
+            document.querySelector(".menu-btn");
+
+        const mobileMenu =
+            document.querySelector(".mobile-menu");
+
+
+        menuButton.addEventListener("click", () => {
+
+            mobileMenu.classList.toggle("show");
+
+        });
+
+
+        document
+            .querySelectorAll(".mobile-menu a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    mobileMenu.classList.remove("show");
+
+                });
+
+            });
+
+    </script>
+
+</body>
+
+</html>

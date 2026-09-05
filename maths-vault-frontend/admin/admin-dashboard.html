@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | ENGGITEA</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header">
+
+        <a href="../index.html" class="logo">
+            ENGGITEA
+        </a>
+
+        <nav class="main-nav">
+            <a href="admin-dashboard.html" class="active-nav">
+                Dashboard
+            </a>
+
+            <a href="pending-resources.html">
+                Pending Resources
+            </a>
+        </nav>
+
+        <div class="header-actions">
+
+            <a href="../profile.html" class="profile-link">
+                Profile
+            </a>
+
+            <button
+                type="button"
+                class="logout-btn"
+                id="logoutBtn">
+                Logout
+            </button>
+
+        </div>
+
+        <button
+            class="menu-btn"
+            aria-label="Open menu"
+            type="button">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu">
+
+        <a href="admin-dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="pending-resources.html">
+            Pending Resources
+        </a>
+
+        <div class="mobile-menu-actions">
+
+            <a href="../profile.html">
+                Profile
+            </a>
+
+            <button
+                type="button"
+                id="mobileLogoutBtn">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN -->
+    <main class="admin-page">
+
+        <!-- WELCOME -->
+        <section class="admin-welcome">
+
+            <div>
+
+                <p class="dashboard-label">
+                    ADMIN PANEL
+                </p>
+
+                <h1>
+                    Admin Dashboard
+                </h1>
+
+                <p>
+                    Manage and review Engineering Mathematics resources.
+                </p>
+
+            </div>
+
+            <div class="admin-symbol">
+                ⚙
+            </div>
+
+        </section>
+
+
+        <!-- QUICK STATS -->
+        <section class="admin-section">
+
+            <div class="admin-section-heading">
+
+                <div>
+
+                    <p>
+                        OVERVIEW
+                    </p>
+
+                    <h2>
+                        Resource Management
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-stats-grid">
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        +
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <strong id="pendingCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Approved
+                        </span>
+
+                        <strong id="approvedCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        ∑
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Resources
+                        </span>
+
+                        <strong id="totalCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADMIN ACTIONS -->
+        <section class="admin-section">
+
+            <div class="admin-section-heading">
+
+                <div>
+
+                    <p>
+                        MANAGEMENT
+                    </p>
+
+                    <h2>
+                        Quick Actions
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-actions-grid">
+
+                <a
+                    href="pending-resources.html"
+                    class="admin-action-card">
+
+                    <div class="admin-action-icon">
+                        !
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Pending Resources
+                        </h3>
+
+                        <p>
+                            Review and approve or reject
+                            submitted resources.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="../search.html"
+                    class="admin-action-card">
+
+                    <div class="admin-action-icon">
+                        ⌕
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Browse Resources
+                        </h3>
+
+                        <p>
+                            View all available learning
+                            resources.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- MESSAGE -->
+        <div
+            id="adminMessage"
+            class="form-message">
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+
+        <div class="footer-logo">
+            ENGGITEA
+        </div>
+
+        <p>
+            Engineering Mathematics Resource Hub
+        </p>
+
+        <span>
+            © 2026 ENGGITEA. All rights reserved.
+        </span>
+
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/admin.js"></script>
+
+
+    <!-- MOBILE MENU -->
+    <script>
+
+        const menuButton =
+            document.querySelector(".menu-btn");
+
+        const mobileMenu =
+            document.querySelector(".mobile-menu");
+
+
+        menuButton.addEventListener("click", () => {
+
+            mobileMenu.classList.toggle("show");
+
+        });
+
+
+        document
+            .querySelectorAll(".mobile-menu a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    mobileMenu.classList.remove("show");
+
+                });
+
+            });
+
+    </script>
+
+</body>
+
+</html>

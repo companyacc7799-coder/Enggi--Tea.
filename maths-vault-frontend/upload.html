@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Upload Resource | ENGGITEA</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header">
+
+        <a href="index.html" class="logo">
+            ENGGITEA
+        </a>
+
+        <nav class="main-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="search.html">Search</a>
+            <a href="upload.html" class="active-nav">Upload</a>
+            <a href="my-resources.html">My Resources</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <a href="profile.html" class="profile-link">
+                Profile
+            </a>
+
+            <button type="button" class="logout-btn" id="logoutBtn">
+                Logout
+            </button>
+
+        </div>
+
+        <button
+            class="menu-btn"
+            aria-label="Open menu"
+            type="button">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="search.html">
+            Search
+        </a>
+
+        <a href="upload.html">
+            Upload
+        </a>
+
+        <a href="my-resources.html">
+            My Resources
+        </a>
+
+        <div class="mobile-menu-actions">
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <button type="button" id="mobileLogoutBtn">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN -->
+    <main class="upload-page">
+
+        <!-- PAGE HEADING -->
+        <section class="upload-heading">
+
+            <p class="dashboard-label">
+                SHARE KNOWLEDGE
+            </p>
+
+            <h1>
+                Upload a Resource
+            </h1>
+
+            <p>
+                Share useful Engineering Mathematics resources
+                with other students.
+            </p>
+
+        </section>
+
+
+        <!-- UPLOAD FORM -->
+        <section class="upload-section">
+
+            <form id="uploadForm" class="upload-form">
+
+                <!-- RESOURCE TITLE -->
+                <div class="form-group">
+
+                    <label for="resourceTitleInput">
+                        Resource Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="resourceTitleInput"
+                        name="title"
+                        placeholder="Enter resource title"
+                        required>
+
+                </div>
+
+
+                <!-- RESOURCE TYPE -->
+                <div class="form-group">
+
+                    <label for="resourceTypeInput">
+                        Resource Type
+                    </label>
+
+                    <select
+                        id="resourceTypeInput"
+                        name="type"
+                        required>
+
+                        <option value="">
+                            Select resource type
+                        </option>
+
+                        <option value="video">
+                            Video
+                        </option>
+
+                        <option value="playlist">
+                            Playlist
+                        </option>
+
+                        <option value="formula">
+                            Formula Sheet
+                        </option>
+
+                        <option value="question-paper">
+                            Question Paper
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SEMESTER -->
+                <div class="form-group">
+
+                    <label for="semesterInput">
+                        Semester
+                    </label>
+
+                    <select
+                        id="semesterInput"
+                        name="semester"
+                        required>
+
+                        <option value="">
+                            Select semester
+                        </option>
+
+                        <option value="1">
+                            Semester 1
+                        </option>
+
+                        <option value="2">
+                            Semester 2
+                        </option>
+
+                        <option value="3">
+                            Semester 3
+                        </option>
+
+                        <option value="4">
+                            Semester 4
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SUBJECT -->
+                <div class="form-group">
+
+                    <label for="subjectInput">
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subjectInput"
+                        name="subject"
+                        placeholder="Example: Applied Calculus"
+                        required>
+
+                </div>
+
+
+                <!-- UNIT -->
+                <div class="form-group">
+
+                    <label for="unitInput">
+                        Unit
+                    </label>
+
+                    <select
+                        id="unitInput"
+                        name="unit"
+                        required>
+
+                        <option value="">
+                            Select unit
+                        </option>
+
+                        <option value="1">
+                            Unit 1
+                        </option>
+
+                        <option value="2">
+                            Unit 2
+                        </option>
+
+                        <option value="3">
+                            Unit 3
+                        </option>
+
+                        <option value="4">
+                            Unit 4
+                        </option>
+
+                        <option value="5">
+                            Unit 5
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+                <div class="form-group">
+
+                    <label for="descriptionInput">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="descriptionInput"
+                        name="description"
+                        rows="5"
+                        placeholder="Briefly describe this resource..."
+                        required></textarea>
+
+                </div>
+
+
+                <!-- RESOURCE URL -->
+                <div class="form-group">
+
+                    <label for="resourceUrlInput">
+                        Resource URL
+                    </label>
+
+                    <input
+                        type="url"
+                        id="resourceUrlInput"
+                        name="resource_url"
+                        placeholder="Paste YouTube or PDF URL"
+                        required>
+
+                    <small>
+                        For videos/playlists use YouTube URL.
+                        For formula sheets/question papers use PDF URL.
+                    </small>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+                <div
+                    id="uploadMessage"
+                    class="form-message">
+                </div>
+
+
+                <!-- BUTTON -->
+                <button
+                    type="submit"
+                    class="auth-submit-btn"
+                    id="uploadSubmitBtn">
+
+                    Upload Resource
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- INFO CARD -->
+        <section class="upload-info-card">
+
+            <div class="upload-info-icon">
+                +
+            </div>
+
+            <div>
+
+                <h2>
+                    Before you upload
+                </h2>
+
+                <p>
+                    Make sure the resource is useful,
+                    relevant to Engineering Mathematics,
+                    and the URL is accessible.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+
+        <div class="footer-logo">
+            ENGGITEA
+        </div>
+
+        <p>
+            Engineering Mathematics Resource Hub
+        </p>
+
+        <span>
+            © 2026 ENGGITEA. All rights reserved.
+        </span>
+
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/resources.js"></script>
+
+
+    <!-- MOBILE MENU -->
+    <script>
+
+        const menuButton =
+            document.querySelector(".menu-btn");
+
+        const mobileMenu =
+            document.querySelector(".mobile-menu");
+
+
+        menuButton.addEventListener("click", () => {
+
+            mobileMenu.classList.toggle("show");
+
+        });
+
+
+        document
+            .querySelectorAll(".mobile-menu a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    mobileMenu.classList.remove("show");
+
+                });
+
+            });
+
+    </script>
+
+</body>
+
+</html>
